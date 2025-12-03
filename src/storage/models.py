@@ -5,10 +5,10 @@ from datetime import datetime
 @dataclass
 class MessageItem:
     msg_id: int
-    author_id: int 
+    channel_name: str
+    channel_id: int
     author_name: str 
+    author_id: int 
     text: str 
-    cleaned_text: str | None
-    language: str | None
-    date: datetime
+    date: datetime | None
     raw: object

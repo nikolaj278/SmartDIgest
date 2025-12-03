@@ -2,8 +2,8 @@ import asyncio
 
 from openai import OpenAI
 
-from src.config.settings import DS_API_KEY, COMMAND
-from src.preprocessing.prompt_builder import build_the_prompt
+from config.settings import DS_API_KEY, COMMAND
+from preprocessing.prompt_builder import build_the_prompt
 
 
 
@@ -34,6 +34,7 @@ class Summarizer:
         requests = [build_the_prompt(msgs, COMMAND) for msgs in collected.values()]
         tasks = [self.send_request(r) for r in requests]
         results = await asyncio.gather(*tasks)
+        # ch are tuples - (channel.name, channel.id)
         return {ch: (req, res) for ch, req, res in zip(collected.keys(), requests, results)}
 
     def summarize(self, collected):
