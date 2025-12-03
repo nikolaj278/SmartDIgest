@@ -2,7 +2,7 @@ import asyncio
 
 from openai import OpenAI
 
-from config.settings import DS_API_KEY, COMMAND
+from config.settings import DS_API_KEY
 from preprocessing.prompt_builder import build_the_prompt
 
 
@@ -30,8 +30,7 @@ class Summarizer:
         Make and run the tasks with asynchronous send_request function.
         Return channel names, requests by channels and results of the requests.
         """
-
-        requests = [build_the_prompt(msgs, COMMAND) for msgs in collected.values()]
+        requests = [build_the_prompt(msgs) for msgs in collected.values()]
         tasks = [self.send_request(r) for r in requests]
         results = await asyncio.gather(*tasks)
         # ch are tuples - (channel.name, channel.id)

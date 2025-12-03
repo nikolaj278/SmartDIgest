@@ -10,5 +10,6 @@ class MessageItem:
     author_name: str 
     author_id: int 
     text: str 
+    language: str | None
     date: datetime | None
     raw: object
