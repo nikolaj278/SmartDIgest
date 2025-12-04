@@ -4,6 +4,6 @@ langdetect
 openai
 python-dotenv
 #sqlite3
-telegram
+python-telegram-bot
 telethon
 
