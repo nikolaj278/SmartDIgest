@@ -3,6 +3,6 @@ emoji
 langdetect
 openai
 python-dotenv
-sqlite3
+#sqlite3
 telegram
 
