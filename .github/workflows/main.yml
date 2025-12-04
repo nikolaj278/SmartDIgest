@@ -21,11 +21,11 @@ jobs:
 
       - name: Run SmartDigest
         env: 
-	  TG_API_ID: ${{ secrets.TG_API_ID }}
-	  TG_API_HASH: ${{ secrets.TG_API_HASH }}
-	  SESSION_NAME: ${{ secrets.SESSION_NAME }}
-	  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-	  TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
-	  DS_API_KEY: ${{ secrets.DS_API_KEY }}
-	  EXCLUDE: ${{ secrets.EXCLUDE }}
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          SESSION_NAME: ${{ secrets.SESSION_NAME }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          DS_API_KEY: ${{ secrets.DS_API_KEY }}
+          EXCLUDE: ${{ secrets.EXCLUDE }}
         run: python main.py
