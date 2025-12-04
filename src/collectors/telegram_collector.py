@@ -3,8 +3,9 @@ from langdetect import detect
 from emoji import replace_emoji
 
 from telethon.sync import TelegramClient
+from telethon.sessions import StringSession
 
-from src.config.settings import SESSION_NAME, TG_API_ID, TG_API_HASH, EXCLUDE
+from src.config.settings import TG_SESSION, TG_API_ID, TG_API_HASH, EXCLUDE
 from src.storage.models import MessageItem
 
 class TelegramCollector:
@@ -15,7 +16,7 @@ class TelegramCollector:
     """
     
     def __init__(self, ):
-        self.client = TelegramClient(SESSION_NAME, TG_API_ID, TG_API_HASH)
+        self.client = TelegramClient(StringSession(TG_SESSION), TG_API_ID, TG_API_HASH)
         
 
     def fetch_new(self, nr_posts=None, mark_read=True):

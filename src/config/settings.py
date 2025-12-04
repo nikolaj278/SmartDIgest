@@ -1,12 +1,13 @@
 import os
 from dotenv import load_dotenv
 
+
 load_dotenv()  # reads .env file
 
 # to initialize telegram client
 TG_API_ID = int(os.getenv("TG_API_ID"))
 TG_API_HASH = os.getenv("TG_API_HASH")
-SESSION_NAME = "my_session"
+TG_SESSION = os.getenv("TG_SESSION")
 
 # telegram bot sender
 TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN")
