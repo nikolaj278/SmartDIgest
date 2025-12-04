@@ -1,7 +1,9 @@
 from collectors.telegram_collector import TelegramCollector
-from summarizer.llm_summarizer import Summarizer
-from storage.data_base import DB
 from outputs.telegram_sender import send_summary
+from storage.data_base import DB
+from summarizer.llm_summarizer import Summarizer
+
+
 
 def main():
     # fetch new messages from telegram
@@ -14,8 +16,6 @@ def main():
         DB().save_summaries(summaries)
         # send summaries of channel content with telegram bot
         send_summary(summaries)
-    else:
-        print("Nothing new.")
 
 if __name__ == "__main__":
     main()
