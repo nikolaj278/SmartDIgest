@@ -220,9 +220,6 @@ __marimo__/
 my_session.session
 *.session
 
-#Text files
-requirements.txt
-
 # data
 data/
 

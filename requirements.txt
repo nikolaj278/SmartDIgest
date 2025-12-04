@@ -1,0 +1,8 @@
+asyncio
+emoji
+langdetect
+openai
+python-dotenv
+sqlite3
+telegram
+
