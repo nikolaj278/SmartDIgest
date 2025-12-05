@@ -77,11 +77,11 @@ If there were some new posts in telegram then you will receive their summarized 
 
 
 ## Usage
-The service will run once per day at 12:00 am by UTC time. If you want to adjust the sending time then go to repository then choose "Code" section on teh top bar. Go to .github/workflow/. Open main.yml file. Fine row number 5: 
+The service will run once per day at 12:00 AM by UTC time. If you want to adjust the sending time then go to repository then choose "Code" section on teh top bar. Go to .github/workflow/. Open main.yml file. Fine row number 5: 
 ```yml
  - cron: '0 12 * * *' 
  ```
- 0 show minutes and 12 show hours. Hours can be changed from 0 to 23.  If you want to make service run more often, then copy add lines:
+ 0 show minutes and 12 show hours. Hours can be changed from 0 to 23.  If you want to make service run more often, then  add more cron commands like:
  
  ```yml
   - cron: " '0 12 * * *' 
