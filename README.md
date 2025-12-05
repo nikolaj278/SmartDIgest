@@ -29,8 +29,8 @@ import os
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-api_id = TG_API_ID
-api_hash = TG_API_HASH
+api_id = "paste here API ID you received"
+api_hash = "paste here API hash you received"
 
 client = TelegramClient(StringSession(), api_id, api_hash)
 await client.start()
@@ -46,7 +46,7 @@ The bot will appear in your chat list. Send any message to it. Then go to  envir
 import os
 import requests
 
-TOKEN = TG_BOT_TOKEN
+TOKEN = "paste bot token you received"
 url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
 resp = requests.get(url)
 print(resp.json()['result'][0]['message']['chat']['id'])
@@ -77,7 +77,17 @@ If there were some new posts in telegram then you will receive their summarized 
 
 
 ## Usage
-The service will run once per day at 12:00 am by UTC time. If you want to adjust the sending time then go to repository then choose "Code" section on teh top bar. Go to .github/workflow/. Open main.yml file. Fine row number 5: - cron: '0 12 * * *'. 0 show minutes and 12 show hours. Hours can be changed from 0 to 23.  If you want to add time of activation of service, then copy - cron: '0 12 * * *' and paste it below the existing one and set the time.
+The service will run once per day at 12:00 am by UTC time. If you want to adjust the sending time then go to repository then choose "Code" section on teh top bar. Go to .github/workflow/. Open main.yml file. Fine row number 5: 
+```yml
+ - cron: '0 12 * * *' 
+ ```
+ 0 show minutes and 12 show hours. Hours can be changed from 0 to 23.  If you want to make service run more often, then copy add lines:
+ 
+ ```yml
+  - cron: " '0 12 * * *' 
+  - cron: " '0 17 * * *' 
+  - cron: " '0 22 * * *' 
+```
 
 ## Tech Stack / Built With
 Languages: 
